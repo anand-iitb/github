@@ -19,7 +19,7 @@ import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATABASE_URL = os.environ["DATABASE_URL"]
-conn = psycopg2.connect(DATABASE_URL,sslmode = "required" )
+conn = psycopg2.connect(DATABASE_URL,sslmode = "require" )
 
 
 # Add .env variables anywhere before SECRET_KEY

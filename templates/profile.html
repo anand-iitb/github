@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<h2>{{person.first_name}} {{person.last_name}}(@{{person.username}})</h2>
+{% if profile.followers == -1 %}
+<p>Profile doesn't exist on github</p>
+{% else %}
+<p>{{profile.followers}} followers</p>
+{% endif %}
+<p>Profile last updated: {{profile.update_time}}</p>
+{% if person == user %}
+<a href="update_prof">Update now</a>
+{% endif %}
+<ul>
+    {% for repo in repos %}
+    <li>
+    <p><b>{{repo.name}}</b> {{repo.stars}} stars</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% endblock %}

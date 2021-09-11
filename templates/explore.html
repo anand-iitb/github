@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% if user.is_authenticated %}
+<h3>Users</h3>
+<ul>
+{% for i in entries %}
+<li style="margin-bottom: 20px;">
+<a href="/explore/{{i.username}}">{{i.username}}</a>
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Cache-control" content="public">
+    </head>
+
+    <body>
+        <p style='text-align: center;color: cadetblue;'>Built by 200050007-200050060</p>
+        <h1 style='text-align: center'>Welcome to GitHub Profiles!</h1>
+
+        {% if user.is_authenticated %}
+        <a style='text-align: center;' href="{% url 'logout' %}"><button>Logout</button></a>
+        <a style='text-align: center;' href="/explore/{{user}}"><button>MyProfile</button></a>
+        <a style='text-align: center;' href="/explore/"><button>Explore</button></a>
+        {% else %}
+        <a style='text-align: center;' href="{% url 'login' %}"><button>Login</button></a>
+        <a style='text-align: center;' href="/myapp/signup"><button>Signup</button></a>
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

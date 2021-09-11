@@ -9,21 +9,27 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import django_heroku
 from pathlib import Path
 import os
+import psycopg2
 import dotenv # <- New
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+DATABASE_URL = os.environ["DATABASE_URL"]
+conn = psycopg2.connect(DATABASE_URL,sslmode = "required" )
+
 
 # Add .env variables anywhere before SECRET_KEY
-dotenv_file = os.path.join(BASE_DIR, ".env")
-if os.path.isfile(dotenv_file):
-    dotenv.load_dotenv(dotenv_file)
+#dotenv_file = os.path.join(BASE_DIR, ".env")
+#if os.path.isfile(dotenv_file):
+ #   dotenv.load_dotenv(dotenv_file)
 
 # UPDATE secret key
 SECRET_KEY = os.environ['SECRET_KEY'] # Instead of your actual secret key
+
 
 
 
@@ -37,7 +43,7 @@ SECRET_KEY = os.environ['SECRET_KEY'] # Instead of your actual secret key
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','damp-hamlet-96089.herokuapp.com']
 
 
 # Application definition
@@ -90,16 +96,19 @@ USER = os.environ['USER']
 PASSWORD = os.environ['PASSWORD']
 DB_NAME = os.environ['DB']
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': DB_NAME,
-        'USER': USER,
-        'PASSWORD': PASSWORD,
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': DB_NAME,
+#        'USER': USER,
+#        'PASSWORD': PASSWORD,
+#        'HOST': '127.0.0.1',
+#        'PORT': '5432',
+#    }
+#}
+DATABASES={}
+DATABASES["default"]=dj_database_url.config(conn_max_age=600,ssl_require=True)
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -147,3 +156,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/explore'
 LOGOUT_REDIRECT_URL = '/explore'
+django_heroku.settings(locals())

@@ -92,9 +92,9 @@ WSGI_APPLICATION = 'github.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-USER = os.environ['USER']
-PASSWORD = os.environ['PASSWORD']
-DB_NAME = os.environ['DB']
+#USER = os.environ['USER']
+#PASSWORD = os.environ['PASSWORD']
+#DB_NAME = os.environ['DB']
 
 #DATABASES = {
 #    'default': {

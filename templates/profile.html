@@ -4,7 +4,7 @@
 {% if user.is_authenticated %}
 <h2>{{person.first_name}} {{person.last_name}}(@{{person.username}})</h2>
 {% if profile.followers == -1 %}
-<p>Profile doesn't exist on github</p>
+<p style='color:red'>Unable to access this username on github.com</p>
 {% else %}
 <p>{{profile.followers}} followers</p>
 {% endif %}

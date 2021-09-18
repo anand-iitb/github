@@ -1,0 +1,2 @@
+https://stackoverflow.com/questions/6923027/disable-browser-back-button-after-logout
+https://stackoverflow.com/questions/36665889/collectstatic-error-while-deploying-django-app-to-heroku

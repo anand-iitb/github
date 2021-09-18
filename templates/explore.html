@@ -2,14 +2,16 @@
 
 
 {% block content %}
+<div id='explore'>
 {% if user.is_authenticated %}
-<h3>Users</h3>
+<h1>Users</h1>
 <ul>
 {% for i in entries %}
 <li style="margin-bottom: 20px;">
-<a href="/explore/{{i.username}}">{{i.username}}</a>
+    <button onclick="window.location.href='/explore/{{i.username}}'">{{i.username}}</button>
 </li>
 {% endfor %}
 </ul>
 {% endif %}
+</div>
 {% endblock %}

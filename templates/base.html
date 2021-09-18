@@ -2,20 +2,24 @@
 <html>
     <head>
         <meta http-equiv="Cache-control" content="public">
+        {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'temp.css' %}"> 
     </head>
 
     <body>
-        <p style='text-align: center;color: cadetblue;'>Built by 200050007-200050060</p>
-        <h1 style='text-align: center'>Welcome to GitHub Profiles!</h1>
-
+        <div id='dashboard'>
+        <h3>Built by 200050007-200050060</h3>
+        <h1>Welcome to GitHub Profiles!</h1>
         {% if user.is_authenticated %}
-        <a style='text-align: center;' href="{% url 'logout' %}"><button>Logout</button></a>
-        <a style='text-align: center;' href="/explore/{{user}}"><button>MyProfile</button></a>
-        <a style='text-align: center;' href="/explore/"><button>Explore</button></a>
+         <button onclick="window.location.href='/accounts/logout'">Logout</button>
+         <button onclick="window.location.href='/explore/'">Explore</button>
+         <button onclick="window.location.href='/explore/{{user}}'">MyProfile</button>
         {% else %}
-        <a style='text-align: center;' href="{% url 'login' %}"><button>Login</button></a>
-        <a style='text-align: center;' href="/myapp/signup"><button>Signup</button></a>
+        <button onclick="window.location.href='/accounts/login'">Login</button>
+        <button onclick="window.location.href='/myapp/signup'">Signup</button>
         {% endif %}
+        </div>
 
         {% block content %}
         {% endblock %}

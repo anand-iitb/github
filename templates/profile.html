@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div id='profile'>
 {% if user.is_authenticated %}
-<h2>{{person.first_name}} {{person.last_name}}(@{{person.username}})</h2>
+<h1>{{person.first_name}} {{person.last_name}}(@{{person.username}})</h1>
 {% if profile.followers == -1 %}
 <p style='color:red'>Unable to access this username on github.com</p>
 {% else %}
@@ -10,15 +11,16 @@
 {% endif %}
 <p>Profile last updated: {{profile.update_time}}</p>
 {% if person == user %}
-<a href="update_prof">Update now</a>
+<button onclick="window.location.href='update_prof'">Update now</button>
 {% endif %}
 <ul>
     {% for repo in repos %}
     <li>
-    <p><b>{{repo.name}}</b> {{repo.stars}} stars</p>
+    <b>{{repo.name}}</b> {{repo.stars}} stars
     </li>
     {% endfor %}
 </ul>
 {% endif %}
+</div>
 
 {% endblock %}

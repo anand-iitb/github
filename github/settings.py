@@ -17,15 +17,15 @@ import dotenv # <- New
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
 DATABASE_URL = os.environ["DATABASE_URL"]
+BASE_DIR = Path(__file__).resolve().parent.parent
 conn = psycopg2.connect(DATABASE_URL,sslmode = "require" )
 
 
-# Add .env variables anywhere before SECRET_KEY
+## Add .env variables anywhere before SECRET_KEY
 #dotenv_file = os.path.join(BASE_DIR, ".env")
 #if os.path.isfile(dotenv_file):
- #   dotenv.load_dotenv(dotenv_file)
+#   dotenv.load_dotenv(dotenv_file)
 
 # UPDATE secret key
 SECRET_KEY = os.environ['SECRET_KEY'] # Instead of your actual secret key
@@ -96,7 +96,7 @@ WSGI_APPLICATION = 'github.wsgi.application'
 #USER = os.environ['USER']
 #PASSWORD = os.environ['PASSWORD']
 #DB_NAME = os.environ['DB']
-
+#
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.postgresql',
@@ -163,5 +163,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 LOGIN_REDIRECT_URL = '/explore'
-LOGOUT_REDIRECT_URL = '/explore'
-#django_heroku.settings(locals())
+LOGOUT_REDIRECT_URL = '/accounts/login'
+django_heroku.settings(locals())

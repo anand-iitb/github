@@ -6,10 +6,13 @@ Django==3.2.7
 django-on-heroku==1.1.2
 gunicorn==20.1.0
 idna==3.2
+livereload==2.6.3
 psycopg2-binary==2.9.1
 python-dotenv==0.19.0
 pytz==2021.1
 requests==2.26.0
+six==1.16.0
 sqlparse==0.4.2
+tornado==6.1
 urllib3==1.26.6
 whitenoise==5.3.0

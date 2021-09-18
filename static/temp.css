@@ -1,0 +1,21 @@
+*{background-color: #E3F2FD;}
+#dashboard{ text-align: center; background-color:  #42A5F5 ;  font-family: 'gabriola' ; padding: 10px 10px 20px 10px; border-radius: 500px;}
+    #dashboard h1{background-color:inherit ;letter-spacing: 2px; color:white; font-size:50px ; font-weight:bold;}
+    #dashboard h3{ background-color:inherit ; margin-left:20%; margin-right:20%; color:#E3F2FD ;}
+    #dashboard button{border-radius: 100px; font-size: 20px; border :2px solid white; width: 150px; height: 50px; background-color:  #42A5F5 ; color:white; padding : 5px 10px 5px 10px; margin: 0px 1% 20px 1%;}
+    #dashboard button:active{background-color: white; color: #42A5F5 ;}
+#login{text-align:center; font-family: 'MV Boli' ; border:3px solid #2196F3 ; margin :10px 10px 10px 10px; padding : 0px 20% 20px 20%; border-radius: 500px;}
+    #login button{border-radius: 100px; font-size: 15px; border :2px solid #42A5F5; width: 100px; height: 40px; background-color:  #42A5F5 ; color:white; padding : 2.5px 5px 2.5px 5px; margin: 0px 1% 0px 1%;}
+    #login button:active{border-color: #42A5F5;background-color: white; color: #42A5F5 ;}
+#explore{margin-left: 30px;}
+    #explore h1{color: #01579B; font-family: 'mv boli'; letter-spacing:5px;}
+    #explore button{margin-left:10px;border-radius: 10px; border: 2px solid  #0D47A1; color:#0D47A1;font-size: 15px; height: 40px;padding: 5px 20px 5px 20px;}
+    #explore button:active{background-color: #0D47A1; color: white ;}
+#profile{border-radius: 500px  ; margin:10px; padding: 10px 10% 10px 10%; font-family: 'Segoe Print'; color: black; border: 2px solid #42A5F5 ;}
+    #profile p{ font-size: large;}
+    #profile button{margin-left:10px;border-radius: 10px; border: 2px solid  #0D47A1; color:#0D47A1;font-size: 15px; height: 40px;padding: 5px 20px 5px 20px;}
+    #profile button:active{background-color: #0D47A1; color: white ;}
+#signup{font-family: 'MV Boli' ; border:3px solid #2196F3 ; margin :10px 10px 10px 10px; padding : 0px 20% 20px 20%; border-radius: 500px;}
+    #signup button{border-radius: 1000px; font-size: 15px; border :2px solid #42A5F5; width: 100px; height: 40px; background-color:  #42A5F5 ; color:white; padding : 2.5px 5px 2.5px 5px; margin: 0px 1% 0px 45%;}
+    #signup button:active{ border-color: #42A5F5;     background-color: white; color: #42A5F5 ;}
+    #signup h1{text-align: center;}

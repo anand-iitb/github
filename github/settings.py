@@ -164,4 +164,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/explore'
 LOGOUT_REDIRECT_URL = '/accounts/login'
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
